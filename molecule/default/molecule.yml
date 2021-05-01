@@ -10,8 +10,18 @@ platforms:
     image: ubuntu:20.04
   - name: ansible-sample-raspios-armhf
     image: ghcr.io/shun2992/raspios-buster-armhf-lite:2021-01-11
+    command: /sbin/init
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    pre_build_image: true
+    privileged: true
   - name: ansible-sample-raspios-arm64
     image: ghcr.io/shun2992/raspios-buster-arm64-lite:2020-08-20
+    command: /sbin/init
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    pre_build_image: true
+    privileged: true
 provisioner:
   name: ansible
 verifier:
