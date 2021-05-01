@@ -4,9 +4,14 @@ dependency:
 driver:
   name: docker
 platforms:
-  - name: instance
-    image: docker.io/pycontribs/centos:8
-    pre_build_image: true
+  - name: ansible-sample-ubuntu-bionic
+    image: ubuntu:18.04
+  - name: ansible-sample-ubuntu-focal
+    image: ubuntu:20.04
+  - name: ansible-sample-raspios-armhf
+    image: ghcr.io/shun2992/raspios-buster-armhf-lite:2021-01-11
+  - name: ansible-sample-raspios-arm64
+    image: ghcr.io/shun2992/raspios-buster-arm64-lite:2020-08-20
 provisioner:
   name: ansible
 verifier:
